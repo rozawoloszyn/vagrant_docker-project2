@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <title>Vagrant + Docker Node.js App</title>
+  <meta charset="UTF-8" />
+  <title>Node.js z formularzem</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Witaj w aplikacji uruchomionej w Dockerze przez Vagranta!</h1>
-    <p>To jest prosty serwer Node.js działający w kontenerze Docker w maszynie wirtualnej.</p>
+  <h1>Wpisz wiadomość:</h1>
+  <form method="POST" action="/submit">
+    <input type="text" name="message" placeholder="Twoja wiadomość" required />
+    <button type="submit">Wyślij</button>
+  </form>
+
+  <h2>Wiadomości:</h2>
+  <ul id="messageList"></ul>
+
+  <script src="script.js"></script>
 </body>
 </html>

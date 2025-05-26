@@ -1,7 +1,8 @@
-version: '3.8'
-
+version: "3"
 services:
-  web:
-    build: .
+  app:
+    build: . # budowanie Dockera na podtsawtie docker-compose
     ports:
       - "8080:8080"
+    volumes:
+      - ./app:/usr/src/app

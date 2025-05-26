@@ -1,13 +1,10 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/jammy64"  # lub inna wersja Ubuntu
+  config.vm.provider "docker" do |d| # konfiguracja providera Dockera
+    d.build_dir = "."
+    d.name = "vagrant-docker-project2"
+    d.has_ssh = false  # musiałam wyłączyć ssh, ponieważ kontenery docekra domyślnie nie mają ssh
+  end
 
-  # Udostępnienie folderu projektu do VM
-  config.vm.synced_folder ".", "/home/vagrant/vagrant-docker-project2"
-
-  # Provisioning - uruchomienie skryptu instalującego Docker i aplikację
-  config.vm.provision "shell", path: "provision.sh"
-
-  # Mapowanie portu 8080 VM na port 8080 hosta Windows
-  config.vm.network "forwarded_port", guest: 8080, host: 8081
-
+  config.vm.network "forwarded_port", guest: 8080, host: 8081 # przekierowanie
+  config.vm.synced_folder ".", "/vagrant"
 end

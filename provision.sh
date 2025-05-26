@@ -1,15 +1,8 @@
 #!/bin/bash
+# instaluje Dockera
+sudo apt update
+sudo apt install -y docker.io docker-compose
 
-# Aktualizacja pakietów
-sudo apt-get update
-
-# Instalacja Dockera
-sudo apt-get install -y docker.io docker-compose
-
-# Start i włączenie dockera
-sudo systemctl start docker
-sudo systemctl enable docker
-
-# Budowa i uruchomienie kontenera z aplikacją Node.js
+# uruchamia Docker Compose (obraz dockera)
 cd /vagrant
 sudo docker-compose up -d --build

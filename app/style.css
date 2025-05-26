@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  background-color: #f7f7f7;
+}
+
+form input {
+  padding: 0.5em;
+  margin-right: 0.5em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
